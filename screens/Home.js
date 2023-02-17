@@ -1,14 +1,21 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Header from '../components/Header'
+import Post from '../components/Post'
 import Stories from '../components/Stories'
+import posts from '../data/posts'
 
 function Home() {
   return (
-    <View style={styles.container}>
-      <Header />
-      <Stories />
-    </View>
+    <>
+      <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
+        <Header />
+        <Stories />
+        {
+          posts.map((item, index) => <Post key={index} item={item}/>)
+        }
+      </ScrollView>
+    </>
   )
 }
 
