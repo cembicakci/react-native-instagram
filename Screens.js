@@ -10,7 +10,7 @@ import SearchScreen from './screens/Search';
 import ShopScreen from './screens/Shop';
 
 // Icons
-import { Home, HomeFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled } from './icons';
+import { Home, HomeFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled } from './Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -75,7 +75,7 @@ function Screens() {
                 name="Profile"
                 component={ProfileScreen}
                 options={{
-                    tabBarIcon: ({ focused, color }) => (
+                    tabBarIcon: ({ focused }) => (
                         <Image
                             style={[styles.avatar, {
                                 borderColor: focused ? '#000' : 'transparent'

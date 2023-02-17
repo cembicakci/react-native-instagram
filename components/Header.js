@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 
-import { Heart, Logo, Messenger, Plus } from '../icons'
+import { Heart, Logo, Messenger, Plus } from '../Icons'
 
 function Header() {
     return (
