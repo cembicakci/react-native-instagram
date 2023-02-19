@@ -1,4 +1,4 @@
-import Svg, { Circle, Rect, Line, Path, Mask } from 'react-native-svg';
+import Svg, { Circle, Rect, Line, Path, Mask, Polyline } from 'react-native-svg';
 
 function Logo(props) {
 	return (
@@ -183,6 +183,68 @@ function Menu({ size, fill, ...props }) {
 	)
 }
 
+function UserPlus({ size, fill, ...props }) {
+	return (
+		<Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={fill} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-user-plus" {...props}><Path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></Path><Circle cx="8.5" cy="7" r="4"></Circle><Line x1="20" y1="8" x2="20" y2="14"></Line><Line x1="23" y1="11" x2="17" y2="11"></Line></Svg>
+	)
+}
+
+function ChevronDown({ size, fill }) {
+	return (
+		<Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-chevron-down"><Polyline points="6 9 12 15 18 9"></Polyline></Svg>
+	)
+}
+
+function ChevronUp({ size }) {
+	return (
+		<Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-chevron-up"><Polyline points="18 15 12 9 6 15"></Polyline></Svg>
+	)
+}
+
+function Grid({ size, fill, ...props }) {
+	return (
+		<Svg
+			viewBox="0 0 24 24"
+			fill={fill}
+			height={size}
+			width={size}
+			{...props}
+		>
+			<Path d="M10 4v4h4V4h-4m6 0v4h4V4h-4m0 6v4h4v-4h-4m0 6v4h4v-4h-4m-2 4v-4h-4v4h4m-6 0v-4H4v4h4m0-6v-4H4v4h4m0-6V4H4v4h4m2 6h4v-4h-4v4M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4c-1.08 0-2-.9-2-2V4a2 2 0 012-2z" />
+		</Svg>
+	)
+}
+
+function UserPin({ size, fill, ...props }) {
+	return (
+		<Svg
+			viewBox="0 0 24 24"
+			fill={fill}
+			height={size}
+			width={size}
+			{...props}
+		>
+			<Path d="M12 10c1.151 0 2-.848 2-2s-.849-2-2-2c-1.15 0-2 .848-2 2s.85 2 2 2zm0 1c-2.209 0-4 1.612-4 3.6v.386h8V14.6c0-1.988-1.791-3.6-4-3.6z" />
+			<Path d="M19 2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h4l3 3 3-3h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-5 15l-2 2-2-2H5V4h14l.002 13H14z" />
+		</Svg>
+	)
+}
+
+function Lock({ size, fill, ...props }) {
+	return (
+		<Svg
+			viewBox="0 0 24 24"
+			fill={fill}
+			height={size}
+			width={size}
+			{...props}
+		>
+			<Path d="M20 12c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7z" />
+		</Svg>
+	)
+}
+
+
 export {
 	Logo,
 	Home,
@@ -200,5 +262,11 @@ export {
 	Bookmark,
 	Share,
 	Comment,
-	Menu
+	Menu,
+	UserPlus,
+	ChevronDown,
+	ChevronUp,
+	Grid,
+	UserPin,
+	Lock
 }

@@ -1,15 +1,25 @@
-import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { Menu, Plus } from '../Icons'
+import React, { useState } from 'react'
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ChevronDown, ChevronUp, Lock, Menu, Plus, UserPlus } from '../Icons'
 
 import profiles from '../data/profiles'
+import Button from '../components/Button'
+
+import TabViewComponent from '../TabViewComponent'
 
 function Profile() {
+
+  const [active, setActive] = useState(true);
+
   return (
     <View style={styles.container}>
 
       <View style={styles.header}>
-        <Text style={styles.username}>{profiles.user.username}</Text>
+        <View style={styles.nameContainer}>
+          <Lock size={24} fill={'#000'} />
+          <Text style={styles.username}>{profiles.user.username}</Text>
+          <ChevronDown size={24} fill={'#000'} />
+        </View>
         <View style={styles.iconContainer}>
           <TouchableOpacity activeOpacity={0.7}>
             <Plus size={28} fill='#000' style={styles.icon} />
@@ -47,6 +57,47 @@ function Profile() {
           </View>
         </View>
       </View>
+
+      <View style={styles.btnContainer}>
+        <Button text={'Edit Profile'} />
+        <Button text={'Share Profile'} />
+        <TouchableOpacity activeOpacity={0.7} style={styles.userPlusIcon}>
+          <UserPlus size={18} fill='#000' />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.stories}>
+        <View style={styles.description}>
+          <Text style={styles.storiesTitle}>Story highlights</Text>
+          <TouchableOpacity activeOpacity={0.7} onPress={() => setActive(!active)}>
+            {active ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
+          </TouchableOpacity>
+        </View>
+        {
+          active ? '' :
+            <>
+              <View>
+                <Text>Keep your favourite stories on your profile.</Text>
+              </View>
+              <ScrollView horizontal={true} style={styles.storyContainer}>
+                <View>
+                  <View style={styles.storyFirstItem}>
+                    <Text style={styles.storyFirstItemText}>+</Text>
+                  </View>
+                  <Text style={{ marginLeft: 20 }}>New</Text>
+                </View>
+                <View style={styles.storyItem} />
+                <View style={styles.storyItem} />
+                <View style={styles.storyItem} />
+                <View style={styles.storyItem} />
+                <View style={styles.storyItem} />
+              </ScrollView>
+            </>
+        }
+      </View>
+
+      <TabViewComponent />
+
     </View>
   )
 }
@@ -56,13 +107,18 @@ export default Profile
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 12,
     backgroundColor: '#fff',
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: 40,
+    marginBottom: 10,
+    paddingHorizontal: 12,
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   username: {
     fontWeight: 'bold',
@@ -76,6 +132,7 @@ const styles = StyleSheet.create({
   },
   profile: {
     flexDirection: 'row',
+    paddingHorizontal: 12,
   },
   name: {
     marginTop: 5,
@@ -92,14 +149,14 @@ const styles = StyleSheet.create({
     top: 60,
     right: 0,
     borderWidth: 1,
-    borderRadius: 20
+    borderRadius: 20,
   },
   plus: {
     color: '#fff',
     fontWeight: 'bold',
     paddingHorizontal: 5,
     fontSize: 18
-    
+
   },
   infoContainar: {
     flex: 1,
@@ -115,5 +172,51 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: 'bold'
+  },
+  btnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 12,
+  },
+  userPlusIcon: {
+    backgroundColor: '#e4e4e4',
+    padding: 7,
+    borderRadius: 5,
+    marginVertical: 15
+  },
+  stories: {
+    marginTop: 5,
+    paddingHorizontal: 12,
+  },
+  description: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  storiesTitle: {
+    fontWeight: 'bold'
+  },
+  storyContainer: {
+    marginTop: 20,
+  },
+  storyFirstItem: {
+    width: 70,
+    height: 70,
+    borderRadius: 70,
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: '#e4e4e4',
+    marginRight: 20,
+  },
+  storyFirstItemText: {
+    fontSize: 48,
+    textAlign: 'center',
+    fontWeight: '200'
+  },
+  storyItem: {
+    backgroundColor: '#e4e4e4',
+    width: 70,
+    height: 70,
+    borderRadius: 70,
+    marginRight: 20
   }
 })
