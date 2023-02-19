@@ -8,7 +8,7 @@ export default {
     medias: [
         {
             id: 1,
-            src: 'https://images.unsplash.com/photo-1585541115062-e91a6580c409?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80',
+            src: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
             username: 'cmbicakci',
             avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
             description: `already missed old good days ⛱️🌞  #summer`,

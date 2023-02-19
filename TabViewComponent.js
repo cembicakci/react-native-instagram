@@ -2,14 +2,9 @@ import { Text } from "react-native";
 import PhotosProfile from "./components/PhotosProfile";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Grid, UserPin } from "./Icons"
+import LabeledPhotos from "./components/LabeledPhotos";
 
 const Tab = createMaterialTopTabNavigator();
-
-function LabeledPhotos() {
-    return (
-        <Text>Labeled Photos</Text>
-    )
-}
 
 function TabViewComponent() {
     return (

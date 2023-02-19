@@ -13,12 +13,12 @@ function Post({ item }) {
         <View style={styles.post}>
             <View style={styles.header}>
                 <View style={styles.user}>
-                    <Image style={styles.avatar} source={{ uri: item.user.avatar }} />
-                    <Text style={styles.title}>{item.user.name}</Text>
+                    <Image style={styles.avatar} source={{ uri: item.avatar ? item.avatar : item.user.avatar }} />
+                    <Text style={styles.title}>{item.username ? item.username : item.user.username}</Text>
                 </View>
                 <Dots size={24} fill='#000' />
             </View>
-            <FitImage src={item.medias[0].src} />
+            <FitImage src={item.src ? item.src : item.medias[0].src} />
             <View style={styles.content}>
                 <View style={styles.actions}>
                     <View style={styles.leftActions}>
@@ -40,7 +40,7 @@ function Post({ item }) {
                     <Text style={styles.likes}>{item.likes} likes</Text>
                 </View>
                 <ReadMore numberOfLines={2} seeMoreStyle={{ color: '#999' }} expandOnly={true}>
-                    <Text key={item.id} style={styles.username}>{item.user.name}</Text>
+                    <Text key={item.id} style={styles.username}>{item.username ? item.username : item.user.username}</Text>
                     {`  `}
                     {item.description}
                 </ReadMore>
@@ -62,7 +62,7 @@ export default Post
 
 const styles = StyleSheet.create({
     post: {
-        marginBottom: 20
+        marginBottom: 20,
     },
     header: {
         flexDirection: 'row',

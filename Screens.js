@@ -37,10 +37,7 @@ function ProfileStack() {
             />
         </Stack.Navigator>
     )
-
 }
-
-
 
 function Screens() {
     return (

@@ -95,9 +95,7 @@ function Profile() {
             </>
         }
       </View>
-
       <TabViewComponent />
-
     </View>
   )
 }

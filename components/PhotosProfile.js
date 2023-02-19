@@ -14,7 +14,7 @@ function PhotosProfile({ navigation }) {
         <View style={styles.container}>
             {
                 profiles.medias.map((item, index) => (
-                    <TouchableOpacity onPress={() => handlePress(item)}>
+                    <TouchableOpacity onPress={() => handlePress(item)} key={index}>
                         <Image source={{ uri: item.src }} key={index} style={styles.image} />
                     </TouchableOpacity>
                 ))

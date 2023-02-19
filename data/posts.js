@@ -7,11 +7,11 @@ export default [
         comments: 22,
         medias: [
             {
-                src: 'https://images.unsplash.com/photo-1585541115062-e91a6580c409?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80'
+                src: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
             }
         ],
         user: {
-            name: 'cmbicakci',
+            username: 'cmbicakci',
             avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
             posts: 39,
             followers: 229,
@@ -30,7 +30,7 @@ export default [
             }
         ],
         user: {
-            name: 'RhondaK',
+            username: 'RhondaK',
             avatar: 'https://images.unsplash.com/profile-1623102053386-c956ee5f0f0aimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
             posts: 39,
             followers: 229,
@@ -49,7 +49,7 @@ export default [
             }
         ],
         user: {
-            name: 'yannicladerach',
+            username: 'yannicladerach',
             avatar: 'https://images.unsplash.com/profile-fb-1509890684-fcf910cd9bc0.jpg?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
             posts: 39,
             followers: 229,
@@ -68,7 +68,7 @@ export default [
             }
         ],
         user: {
-            name: 'cmbicakci',
+            username: 'cmbicakci',
             avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
             posts: 39,
             followers: 229,
@@ -79,6 +79,25 @@ export default [
         id: 5,
         description: `🐳`,
         date: '2023-02-16 10:00:00',
+        likes: 1123,
+        comments: 321,
+        medias: [
+            {
+                src: 'https://images.unsplash.com/photo-1675534496184-40ecb9853869?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+            }
+        ],
+        user: {
+            username: 'jevgenifil',
+            avatar: 'https://images.unsplash.com/profile-1675708572965-5b75c5ba8c10image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
+            posts: 99,
+            followers: 1234,
+            following: 221
+        }
+    },
+    {
+        id: 6,
+        description: `🐳`,
+        date: '2023-02-17 09:00:00',
         likes: 202,
         comments: 3,
         medias: [
@@ -87,7 +106,7 @@ export default [
             }
         ],
         user: {
-            name: 'cmbicakci',
+            username: 'cmbicakci',
             avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
             posts: 39,
             followers: 229,
@@ -95,7 +114,7 @@ export default [
         }
     },
     {
-        id: 6,
+        id: 7,
         description: `💯💯💯`,
         date: '2023-02-16 09:00:00',
         likes: 98,
@@ -106,11 +125,30 @@ export default [
             }
         ],
         user: {
-            name: 'cmbicakci',
+            username: 'cmbicakci',
             avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
             posts: 39,
             followers: 229,
             following: 287
+        }
+    },
+    {
+        id: 8,
+        description: `work on progress`,
+        date: '2023-02-15 09:00:00',
+        likes: 213,
+        comments: 45,
+        medias: [
+            {
+                src: 'https://images.unsplash.com/photo-1673101075633-1732778c8da9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+            }
+        ],
+        user: {
+            username: 'minarad',
+            avatar: 'https://images.unsplash.com/profile-1631698406510-ae2eec79e5beimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
+            posts: 23,
+            followers: 111,
+            following: 123
         }
     },
 ]
