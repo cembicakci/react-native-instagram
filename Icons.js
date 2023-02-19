@@ -177,6 +177,12 @@ function Share({ size, fill, ...props }) {
 	)
 }
 
+function Menu({ size, fill, ...props }) {
+	return (
+		<Svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={fill} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" {...props}><Line x1="3" y1="12" x2="21" y2="12"></Line><Line x1="3" y1="6" x2="21" y2="6"></Line><Line x1="3" y1="18" x2="21" y2="18"></Line></Svg>
+	)
+}
+
 export {
 	Logo,
 	Home,
@@ -193,5 +199,6 @@ export {
 	Dots,
 	Bookmark,
 	Share,
-	Comment
+	Comment,
+	Menu
 }
