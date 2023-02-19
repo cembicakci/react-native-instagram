@@ -4,8 +4,10 @@ import profiles from '../data/profiles'
 
 function PhotosProfile({ navigation }) {
 
+    const { name, avatar } = profiles.user
+
     function handlePress(item) {
-        navigation.navigate('ProfileDetail', { item })
+        navigation.navigate('ProfileDetail', { item, name, avatar })
 
     }
     return (
