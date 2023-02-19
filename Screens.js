@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, SafeAreaView, StyleSheet, Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
 import HomeScreen from './screens/Home';
@@ -11,8 +12,35 @@ import ShopScreen from './screens/Shop';
 
 // Icons
 import { Home, HomeFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled } from './Icons';
+import ProfileDetail from './components/ProfileDetail';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function ProfileStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name='ProfileScreen'
+                component={ProfileScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name='ProfileDetail'
+                component={ProfileDetail}
+                options={{
+                    headerTitle: 'Posts',
+                    headerBackTitle: ''
+                }}
+            />
+        </Stack.Navigator>
+    )
+
+}
+
+
 
 function Screens() {
     return (
@@ -73,7 +101,7 @@ function Screens() {
                 }} />
             <Tab.Screen
                 name="Profile"
-                component={ProfileScreen}
+                component={ProfileStack}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Image

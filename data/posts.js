@@ -12,7 +12,10 @@ export default [
         ],
         user: {
             name: 'cmbicakci',
-            avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg'
+            avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
+            posts: 39,
+            followers: 229,
+            following: 287
         }
     },
     {
@@ -28,7 +31,10 @@ export default [
         ],
         user: {
             name: 'RhondaK',
-            avatar: 'https://images.unsplash.com/profile-1623102053386-c956ee5f0f0aimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff'
+            avatar: 'https://images.unsplash.com/profile-1623102053386-c956ee5f0f0aimage?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
+            posts: 39,
+            followers: 229,
+            following: 287
         }
     },
     {
@@ -44,7 +50,67 @@ export default [
         ],
         user: {
             name: 'yannicladerach',
-            avatar: 'https://images.unsplash.com/profile-fb-1509890684-fcf910cd9bc0.jpg?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff'
+            avatar: 'https://images.unsplash.com/profile-fb-1509890684-fcf910cd9bc0.jpg?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff',
+            posts: 39,
+            followers: 229,
+            following: 287
         }
-    }
+    },
+    {
+        id: 4,
+        description: ``,
+        date: '2023-02-17 10:00:00',
+        likes: 100,
+        comments: 22,
+        medias: [
+            {
+                src: 'https://images.unsplash.com/photo-1675822533501-b3011a164cec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1037&q=80'
+            }
+        ],
+        user: {
+            name: 'cmbicakci',
+            avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
+            posts: 39,
+            followers: 229,
+            following: 287
+        }
+    },
+    {
+        id: 5,
+        description: ``,
+        date: '2023-02-17 10:00:00',
+        likes: 100,
+        comments: 22,
+        medias: [
+            {
+                src: 'https://images.unsplash.com/photo-1676675404229-42d8f69126a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
+            }
+        ],
+        user: {
+            name: 'cmbicakci',
+            avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
+            posts: 39,
+            followers: 229,
+            following: 287
+        }
+    },
+    {
+        id: 6,
+        description: ``,
+        date: '2023-02-17 10:00:00',
+        likes: 100,
+        comments: 22,
+        medias: [
+            {
+                src: 'https://images.unsplash.com/photo-1675822533501-b3011a164cec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1037&q=80'
+            }
+        ],
+        user: {
+            name: 'cmbicakci',
+            avatar: 'https://pbs.twimg.com/profile_images/1295728524490350592/li5FAiq7_400x400.jpg',
+            posts: 39,
+            followers: 229,
+            following: 287
+        }
+    },
 ]

@@ -1,12 +1,37 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import profiles from '../data/profiles'
 
-function PhotosProfile() {
+function PhotosProfile({ navigation }) {
+
+    function handlePress(item) {
+        navigation.navigate('ProfileDetail', { item })
+
+    }
     return (
-        <View>
-            <Text>PhotosProfile</Text>
+        <View style={styles.container}>
+            {
+                profiles.medias.map((item, index) => (
+                    <TouchableOpacity onPress={() => handlePress(item)}>
+                        <Image source={{ uri: item.src }} key={index} style={styles.image} />
+                    </TouchableOpacity>
+                ))
+            }
         </View>
     )
 }
 
 export default PhotosProfile
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
+    image: {
+        width: Dimensions.get('screen').width / 3,
+        height: Dimensions.get('screen').width / 3,
+        resizeMode: 'cover'
+
+    }
+})

@@ -1,9 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Text } from "react-native";
 import PhotosProfile from "./components/PhotosProfile";
-import { Grid, UserPin } from "./Icons";
-import { G } from "react-native-svg";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Grid, UserPin } from "./Icons"
 
 const Tab = createMaterialTopTabNavigator();
 
