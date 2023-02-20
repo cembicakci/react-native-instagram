@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, SafeAreaView, StyleSheet, Text } from 'react-native'
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,15 +13,20 @@ import MessagesScreen from './screens/Messages';
 import NotificationsScreen from './screens/Notifications';
 
 // Icons
-import { Home, HomeFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled } from './Icons';
+import { Home, HomeFilled, PenToSquare, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled, VideoPlus } from './Icons';
 import ProfileDetail from './components/ProfileDetail';
+import Button from './components/Button';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function HomeStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+        screenOptions={{
+            headerStyle: {borderBottomWidth: 0}
+        }}
+        >
             <Stack.Screen
                 name='HomeScreen'
                 component={HomeScreen}
@@ -34,7 +39,24 @@ function HomeStack() {
                 component={MessagesScreen}
                 options={{
                     headerTitle: '',
-                    headerBackTitle: '',
+                    headerBackTitle: 'cmbicakci',
+                    headerTintColor: '#000',
+                    headerShadowVisible: false, // applied here
+                    headerBackTitleStyle: {
+                        fontSize: 22,
+                    },
+                    headerRight: () => {
+                        return (
+                            <>
+                                <TouchableOpacity activeOpacity={0.7} style={{ marginRight: 20 }}>
+                                    <VideoPlus size={36} fill={'#000'} />
+                                </TouchableOpacity>
+                                <TouchableOpacity activeOpacity={0.7}>
+                                    <PenToSquare size={22} fill={'#000'} />
+                                </TouchableOpacity>
+                            </>
+                        )
+                    }
                 }}
             />
             <Stack.Screen
