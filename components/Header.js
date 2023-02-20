@@ -1,8 +1,20 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
-
 import { Heart, Logo, Messenger, Plus } from '../Icons'
+import { useNavigation } from '@react-navigation/native';
+
 
 function Header() {
+
+    const navigation = useNavigation();
+
+    function handleMessages() {
+        navigation.navigate('MessagesScreen')
+    }
+
+    function handleNotif() {
+        navigation.navigate('NotificationsScreen')
+    }
+
     return (
         <View style={styles.header}>
             <Logo size={30} fill='#000' />
@@ -10,13 +22,13 @@ function Header() {
                 <TouchableOpacity activeOpacity={0.4}>
                     <Plus size={24} fill='#000' />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.4} style={styles.button}>
+                <TouchableOpacity activeOpacity={0.4} style={styles.button} onPress={handleNotif}>
                     <View style={styles.dotContainer}>
                         <View style={styles.dot} />
                     </View>
                     <Heart size={24} fill='#000' />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.4} style={styles.button}>
+                <TouchableOpacity activeOpacity={0.4} style={styles.button} onPress={handleMessages}>
                     <View style={styles.dotContainer}>
                         <View style={styles.dot} />
                     </View>

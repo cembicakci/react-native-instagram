@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Header from '../components/Header'
 import Post from '../components/Post'
 import Stories from '../components/Stories'
@@ -12,7 +12,7 @@ function Home() {
         <Header />
         <Stories />
         {
-          posts.map((item, index) => <Post key={index} item={item}/>)
+          posts.map((item, index) => <Post key={index} item={item} />)
         }
       </ScrollView>
     </>

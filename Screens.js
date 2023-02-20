@@ -9,6 +9,8 @@ import ProfileScreen from './screens/Profile';
 import ReelScreen from './screens/Reel';
 import SearchScreen from './screens/Search';
 import ShopScreen from './screens/Shop';
+import MessagesScreen from './screens/Messages';
+import NotificationsScreen from './screens/Notifications';
 
 // Icons
 import { Home, HomeFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled } from './Icons';
@@ -16,6 +18,36 @@ import ProfileDetail from './components/ProfileDetail';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+function HomeStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name='HomeScreen'
+                component={HomeScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name='MessagesScreen'
+                component={MessagesScreen}
+                options={{
+                    headerTitle: '',
+                    headerBackTitle: ''
+                }}
+            />
+            <Stack.Screen
+                name='NotificationsScreen'
+                component={NotificationsScreen}
+                options={{
+                    headerTitle: '',
+                    headerBackTitle: 'Notifications'
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
 
 function ProfileStack() {
     return (
@@ -49,7 +81,7 @@ function Screens() {
         }}>
             <Tab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeStack}
                 options={{
                     tabBarIcon: ({ focused, color }) => {
                         if (focused) {
