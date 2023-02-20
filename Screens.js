@@ -34,7 +34,7 @@ function HomeStack() {
                 component={MessagesScreen}
                 options={{
                     headerTitle: '',
-                    headerBackTitle: ''
+                    headerBackTitle: '',
                 }}
             />
             <Stack.Screen
