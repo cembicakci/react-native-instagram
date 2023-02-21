@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,9 +13,8 @@ import MessagesScreen from './screens/Messages';
 import NotificationsScreen from './screens/Notifications';
 
 // Icons
-import { Home, HomeFilled, PenToSquare, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled, VideoPlus } from './Icons';
+import { Home, HomeFilled, PenToSquare, Plus, PlusFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled, VideoPlus } from './Icons';
 import ProfileDetail from './components/ProfileDetail';
-import Button from './components/Button';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -131,8 +130,21 @@ function Screens() {
                         return <Search size={30} fill={color} />
                     }
                 }} />
+
             <Tab.Screen
                 name="Reel"
+                component={ShopScreen}
+                options={{
+                    tabBarIcon: ({ focused, color }) => {
+                        if (focused) {
+                            return <PlusFilled size={30} fill={color} />
+                        }
+
+                        return <Plus size={30} fill={color} />
+                    }
+                }} />
+            <Tab.Screen
+                name="Shop"
                 component={ReelScreen}
                 options={{
                     tabBarIcon: ({ focused, color }) => {
@@ -141,18 +153,6 @@ function Screens() {
                         }
 
                         return <Reel size={30} fill={color} />
-                    }
-                }} />
-            <Tab.Screen
-                name="Shop"
-                component={ShopScreen}
-                options={{
-                    tabBarIcon: ({ focused, color }) => {
-                        if (focused) {
-                            return <ShopFilled size={30} fill={color} />
-                        }
-
-                        return <Shop size={30} fill={color} />
                     }
                 }} />
             <Tab.Screen

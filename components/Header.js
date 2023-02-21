@@ -19,9 +19,6 @@ function Header() {
         <View style={styles.header}>
             <Logo size={30} fill='#000' />
             <View style={styles.actions}>
-                <TouchableOpacity activeOpacity={0.4}>
-                    <Plus size={24} fill='#000' />
-                </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.4} style={styles.button} onPress={handleNotif}>
                     <View style={styles.dotContainer}>
                         <View style={styles.dot} />
