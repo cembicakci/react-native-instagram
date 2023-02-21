@@ -23,9 +23,9 @@ const Stack = createNativeStackNavigator();
 function HomeStack() {
     return (
         <Stack.Navigator
-        screenOptions={{
-            headerStyle: {borderBottomWidth: 0}
-        }}
+            screenOptions={{
+                headerStyle: { borderBottomWidth: 0 }
+            }}
         >
             <Stack.Screen
                 name='HomeScreen'
@@ -64,7 +64,12 @@ function HomeStack() {
                 component={NotificationsScreen}
                 options={{
                     headerTitle: '',
-                    headerBackTitle: 'Notifications'
+                    headerBackTitle: 'Notifications',
+                    headerTintColor: '#000',
+                    headerShadowVisible: false, // applied here
+                    headerBackTitleStyle: {
+                        fontSize: 24,
+                    }
                 }}
             />
         </Stack.Navigator>
