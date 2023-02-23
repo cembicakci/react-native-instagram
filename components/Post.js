@@ -1,5 +1,5 @@
 import ReadMore from '@fawazahmed/react-native-read-more'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Bookmark, Comment, Dots, Heart, Share } from '../Icons'
 import FitImage from './FitImage'
 import dayjs from 'dayjs'
@@ -14,7 +14,16 @@ function Post({ item }) {
     const dispatch = useDispatch();
 
     const post = useSelector(state => state.post.posts)
-    console.log(post)
+
+    function savePhoto(item) {
+        if (post.find(e => e.id === item.id)) {
+            Alert.alert('Post zaten kayıtlı')
+            return;
+        }
+        
+        dispatch(addPost(item))
+        Alert.alert('Başarıyla kaydedildi')
+    }
 
     return (
         <View style={styles.post}>
@@ -39,7 +48,7 @@ function Post({ item }) {
                             <Share size={24} fill={'#222'} />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity activeOpacity={0.7} onPress={() => {dispatch(addPost(item))}}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => savePhoto(item)}>
                         <Bookmark size={24} fill={'#222'} />
                     </TouchableOpacity>
                 </View>

@@ -15,6 +15,7 @@ import NotificationsScreen from './screens/Notifications';
 // Icons
 import { Home, HomeFilled, PenToSquare, Plus, PlusFilled, Reel, ReelFilled, Search, SearchFilled, Shop, ShopFilled, VideoPlus } from './Icons';
 import ProfileDetail from './components/ProfileDetail';
+import SavedPosts from './screens/SavedPosts';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -91,6 +92,15 @@ function ProfileStack() {
                 options={{
                     headerTitle: 'Posts',
                     headerBackTitle: ''
+                }}
+            />
+            <Stack.Screen
+                name='SavedPostsScreen'
+                component={SavedPosts}
+                options={{
+                    headerTitle: 'Saved',
+                    headerBackTitle: '',
+                    headerShadowVisible: false, // applied here
                 }}
             />
         </Stack.Navigator>

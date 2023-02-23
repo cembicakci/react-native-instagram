@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { ChevronDown, ChevronUp, Lock, Menu, Plus, UserPlus } from '../Icons'
+import { Bookmark, ChevronDown, ChevronUp, Lock, Menu, Plus, UserPlus } from '../Icons'
 
 import profiles from '../data/profiles'
 import Button from '../components/Button'
 
 import TabViewComponent from '../TabViewComponent'
+import BottomSheet from '@gorhom/bottom-sheet';
 
-function Profile() {
+
+function Profile({ navigation }) {
 
   const [active, setActive] = useState(true);
+  const [open, setOpen] = useState(false);
+
+  const bottomSheetRef = useRef();
+  const snapPoints = ['40%'];
 
   return (
     <View style={styles.container}>
@@ -24,7 +30,7 @@ function Profile() {
           <TouchableOpacity activeOpacity={0.7}>
             <Plus size={28} fill='#000' style={styles.icon} />
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.7}>
+          <TouchableOpacity activeOpacity={0.7} onPress={() => setOpen(!open)}>
             <Menu size={28} fill='#000' style={styles.icon} />
           </TouchableOpacity>
         </View>
@@ -96,6 +102,23 @@ function Profile() {
         }
       </View>
       <TabViewComponent />
+
+      {open ?
+        <BottomSheet
+          ref={bottomSheetRef}
+          snapPoints={snapPoints}
+          enablePanDownToClose={true}
+        >
+          <View style={styles.contentContainer}>
+
+            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }} onPress={() => navigation.navigate('SavedPostsScreen')}>
+              <Bookmark size={24} fill={'#000'} style={{ marginHorizontal: 15 }} />
+              <Text style={{ flex: 1, fontSize: 16 }}>Saved</Text>
+            </TouchableOpacity>
+
+          </View>
+        </BottomSheet>
+        : ''}
     </View>
   )
 }
@@ -215,6 +238,17 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 70,
-    marginRight: 20
-  }
+    marginRight: 20,
+  },
+  container2: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: 'gray',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
 })
