@@ -14,6 +14,7 @@ function LikedStory() {
                 <View style={styles.content}>
                     <Text>
                         <Text style={styles.username}>{posts[1].user.username}</Text> and <Text style={styles.username}>{posts[2].user.username}</Text> liked your story
+                        <Text style={styles.date}>{' '}1w</Text>
                     </Text>
                 </View>
                 <Image source={{ uri: posts[0].medias[0].src }} style={styles.post} />
@@ -27,6 +28,7 @@ function LikedStory() {
                 <View style={styles.content}>
                     <Text>
                         <Text style={styles.username}>{posts[2].user.username}</Text> and <Text style={styles.username}>{posts[4].user.username}</Text> liked your story
+                        <Text style={styles.date}>{' '}1w</Text>
                     </Text>
                 </View>
                 <Image source={{ uri: posts[1].medias[0].src }} style={styles.post} />
@@ -34,11 +36,12 @@ function LikedStory() {
 
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
-                    <Image source={{ uri: posts[1].user.avatar }} style={styles.image} />
+                    <Image source={{ uri: posts[1].user.avatar }} style={styles.imageSingle} />
                 </View>
                 <View style={styles.content}>
                     <Text>
                         <Text style={styles.username}>{posts[2].user.username}</Text> liked your story
+                        <Text style={styles.date}>{' '}1w</Text>
                     </Text>
                 </View>
                 <Image source={{ uri: posts[3].medias[0].src }} style={styles.post} />
@@ -71,6 +74,11 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 40
     },
+    imageSingle: {
+        width: 50,
+        height: 50,
+        borderRadius: 50
+    },
     imageBottom: {
         position: 'absolute',
         top: 10,
@@ -81,5 +89,8 @@ const styles = StyleSheet.create({
     post: {
         width: 50,
         height: 50
+    },
+    date: {
+        color: 'gray',
     }
 })

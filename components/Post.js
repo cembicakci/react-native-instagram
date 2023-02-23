@@ -4,10 +4,17 @@ import { Bookmark, Comment, Dots, Heart, Share } from '../Icons'
 import FitImage from './FitImage'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { useDispatch, useSelector } from 'react-redux'
+import { addPost } from '../redux/postSlice'
 
 dayjs.extend(relativeTime)
 
 function Post({ item }) {
+
+    const dispatch = useDispatch();
+
+    const post = useSelector(state => state.post.posts)
+    console.log(post)
 
     return (
         <View style={styles.post}>
@@ -32,7 +39,7 @@ function Post({ item }) {
                             <Share size={24} fill={'#222'} />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity activeOpacity={0.7}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => {dispatch(addPost(item))}}>
                         <Bookmark size={24} fill={'#222'} />
                     </TouchableOpacity>
                 </View>
